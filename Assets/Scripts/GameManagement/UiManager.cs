@@ -6,6 +6,9 @@ using UnityEngine;
 public class UiManager : MonoBehaviour
 {
 
+    public GameObject pauseMenu;
+
+
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI highScoreText;
 
@@ -19,6 +22,12 @@ public class UiManager : MonoBehaviour
     public void UpdateHighScore(int newHighScore)
     {
         highScoreText.text = "High score: " + newHighScore.ToString();
+    }
+    public void TogglePauseMenuState(bool state)
+    {
+        pauseMenu.SetActive(state);
+        Time.timeScale = (!state && GameManager.Instance.IsGameActive) ? 1 : 0;
+         
     }
 
     void Awake()
