@@ -51,6 +51,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("Game over. Score: " + (int)Score);
             isGameActive = false;
             Time.timeScale = 0;
+            UiManager.Instance.gameOverScreen.SetActive(true);
             
 
         }
