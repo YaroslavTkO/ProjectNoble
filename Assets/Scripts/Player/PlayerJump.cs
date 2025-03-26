@@ -14,12 +14,15 @@ public class PlayerJump : MonoBehaviour
     private float screenLeft;
     private float screenRight;
 
+    private GameManager gameManager;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
 
         screenLeft = Camera.main.ViewportToWorldPoint(Vector3.zero).x;
         screenRight = Camera.main.ViewportToWorldPoint(Vector3.right).x;
+        gameManager = GameManager.Instance;
     }
 
     void Update()
@@ -45,7 +48,8 @@ public class PlayerJump : MonoBehaviour
             Collider2D platformCollider = collision.GetComponent<Collider2D>();
             if (transform.position.y > collision.transform.position.y)
             {
-
+                if (gameManager.Score < transform.position.y)
+                    gameManager.Score = (int)transform.position.y;
                 var obj = collision.gameObject.GetComponent<DropAndFade>();
                 if (obj != null)
                 {

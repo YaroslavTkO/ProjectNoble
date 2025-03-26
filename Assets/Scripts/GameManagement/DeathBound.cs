@@ -11,8 +11,7 @@ public class DeathBound : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Game Over");
-            Time.timeScale = 0;
+            GameManager.Instance.GameOver();
         }
     }
 }
