@@ -12,7 +12,7 @@ public class MovingPlatform : MonoBehaviour
 
     void Start()
     {
-        startX = transform.position.x;
+        startX = 0;
     }
 
     void Update()

@@ -204,6 +204,7 @@ GameObject:
   m_Component:
   - component: {fileID: 123287159}
   - component: {fileID: 123287158}
+  - component: {fileID: 123287160}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -229,10 +230,10 @@ MonoBehaviour:
   - {fileID: 5593360981258264751, guid: 9bae54f5aab192744b861a718ca87a83, type: 3}
   - {fileID: 7706361159512618882, guid: 0b664c346f084ff4c835fec9be57103f, type: 3}
   probabilities:
-  - 0.4
+  - 0.6
+  - 0.1
   - 0.2
-  - 0.2
-  - 0.2
+  - 0.1
   spawnInterval: 2
   initialPlatforms: 5
   despawnHeight: -9
@@ -251,6 +252,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &123287160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123287157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39a11b7212eb5f04da0f53882006de36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 836373568}
+  spawnRate: 0.5
+  spawnDistance: 7
+  minePrefabs:
+  - {fileID: 7060248913344593045, guid: c9d69306f8c2e964e8a7a1dc42bfee15, type: 3}
+  - {fileID: 7752506635051633148, guid: 3ac40d93bcd12a844b525ad1781f6dee, type: 3}
+  currentMine: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
