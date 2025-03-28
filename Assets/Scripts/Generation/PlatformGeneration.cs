@@ -61,6 +61,17 @@ public class PlatformGeneration : MonoBehaviour
 
         highestY = newY;
     }
+    public void UpdateGenerationRate(List<float> newGenRate)
+    {
+        if (newGenRate.Count < probabilities.Count)
+            return;
+
+        for (int i = 0; i < probabilities.Count; i++)
+        {
+            probabilities[i] = newGenRate[i];
+
+        }
+    }
 
     void Update()
     {

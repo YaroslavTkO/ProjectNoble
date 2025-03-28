@@ -16,6 +16,8 @@ public class UiManager : MonoBehaviour
     public TextMeshProUGUI highScoreText;
     public TextMeshProUGUI highScoreTextGameOverScreen;
 
+    public GameObject[] controlsButtons;
+
 
     public static UiManager Instance;
 
@@ -34,6 +36,16 @@ public class UiManager : MonoBehaviour
         pauseMenu.SetActive(state);
         Time.timeScale = (!state && GameManager.Instance.IsGameActive) ? 1 : 0;
          
+    }
+
+    public void ToggleControlsButtons()
+    {
+        bool state = PlayerPrefs.GetInt("buttons", 0) == 1;
+        foreach (var button in controlsButtons)
+        {
+            button.SetActive(state);
+
+        }
     }
 
     public void LoadScene(int id)
@@ -57,8 +69,10 @@ public class UiManager : MonoBehaviour
 
     private void Start()
     {
+        gameOverScreen.GetComponent<Tips>().SetTip();
         gameOverScreen.SetActive(false);
         pauseMenu.SetActive(false);
+        ToggleControlsButtons();
     }
 
 }

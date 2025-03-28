@@ -5,12 +5,35 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    public DifficultyDatabase database;
 
     private int score;
-    public int Score {  get { return score; } set { score = value; UiManager.Instance.UpdateScore(value); } }
+    public int Score
+    {
+        get { return score; }
+        set
+        {
+            score = value;
+            UiManager.Instance.UpdateScore(value);
+            if (nextMilestone < database.scoresMilestones.Count &&
+                score >= database.scoresMilestones[nextMilestone])
+            {
+                nextMilestone++;
+                mineGenerator.UpdateGenerationRate(database.difficulties[nextMilestone].mineGenerationRate);
+                platformGenerator.UpdateGenerationRate(database.difficulties[nextMilestone].platformGenerationRates);
+
+            }
+
+
+        }
+    }
+    private int nextMilestone = 0;
 
     private bool isGameActive = true;
-    public bool IsGameActive { get { return isGameActive; } } 
+    public bool IsGameActive { get { return isGameActive; } }
+
+    private MineGeneration mineGenerator;
+    private PlatformGeneration platformGenerator;
 
     void Awake()
     {
@@ -28,6 +51,10 @@ public class GameManager : MonoBehaviour
     {
         int highScore = PlayerPrefs.GetInt("HighScore", 0);
         UiManager.Instance.UpdateHighScore(highScore);
+        mineGenerator = GetComponent<MineGeneration>();
+        platformGenerator = GetComponent<PlatformGeneration>();
+        mineGenerator.UpdateGenerationRate(database.difficulties[nextMilestone].mineGenerationRate);
+        platformGenerator.UpdateGenerationRate(database.difficulties[nextMilestone].platformGenerationRates);
     }
 
     public void SaveRecord()
@@ -52,7 +79,7 @@ public class GameManager : MonoBehaviour
             isGameActive = false;
             Time.timeScale = 0;
             UiManager.Instance.gameOverScreen.SetActive(true);
-            
+
 
         }
 

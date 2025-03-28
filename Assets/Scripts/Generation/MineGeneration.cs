@@ -41,6 +41,11 @@ public class MineGeneration : MonoBehaviour
         }
 
     }
+    public void UpdateGenerationRate(float newRate)
+    {
+        spawnRate = newRate;
+    }
+
     private void Update()
     {
         DestroyMine();
