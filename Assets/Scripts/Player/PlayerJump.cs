@@ -6,6 +6,7 @@ public class PlayerJump : MonoBehaviour
 {
     public float jumpForce = 3f;
     public float moveSpeed = 2f;
+    public GameObject charSprite;
 
     public CameraMovement cameraMovement;
 
@@ -16,13 +17,14 @@ public class PlayerJump : MonoBehaviour
 
     private bool leftbuttonInput = false;
     private bool rightbuttonInput = false;
+    private SpriteRenderer charSpriteRend;
 
     private GameManager gameManager;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
+        charSpriteRend = charSprite.GetComponent<SpriteRenderer>();
         screenLeft = Camera.main.ViewportToWorldPoint(Vector3.zero).x;
         screenRight = Camera.main.ViewportToWorldPoint(Vector3.right).x;
         gameManager = GameManager.Instance;
@@ -43,6 +45,14 @@ public class PlayerJump : MonoBehaviour
                 moveInput = -1;
             else if (rightbuttonInput)
                 moveInput = 1;
+        }
+        if (moveInput < 0)
+        {
+            charSpriteRend.flipX = true;
+        }
+        else if (moveInput > 0)
+        {
+            charSpriteRend.flipX = false;
         }
         transform.position += new Vector3(moveInput * moveSpeed * Time.deltaTime, 0, 0);
     }
