@@ -14,6 +14,9 @@ public class PlayerJump : MonoBehaviour
     private float screenLeft;
     private float screenRight;
 
+    private bool leftbuttonInput = false;
+    private bool rightbuttonInput = false;
+
     private GameManager gameManager;
 
     void Start()
@@ -34,6 +37,13 @@ public class PlayerJump : MonoBehaviour
     void Move()
     {
         float moveInput = Input.GetAxis("Horizontal");
+        if (moveInput < 0.1 && moveInput > -0.1)
+        {
+            if (leftbuttonInput)
+                moveInput = -1;
+            else if (rightbuttonInput)
+                moveInput = 1;
+        }
         transform.position += new Vector3(moveInput * moveSpeed * Time.deltaTime, 0, 0);
     }
 
@@ -75,6 +85,16 @@ public class PlayerJump : MonoBehaviour
         }
 
         transform.position = newPosition;
+    }
+
+    public void LeftButtonInput(bool newInput)
+    {
+        leftbuttonInput = newInput;
+    }
+
+    public void RightButtonInput(bool newInput)
+    {
+        rightbuttonInput = newInput;
     }
 }
 

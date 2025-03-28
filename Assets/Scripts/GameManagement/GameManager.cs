@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
         {
             PlayerPrefs.SetInt("HighScore", score);
             PlayerPrefs.Save();
-            UiManager.Instance.UpdateHighScore(highScore);
+            UiManager.Instance.UpdateHighScore(score);
             Debug.Log(PlayerPrefs.GetInt("HighScore"));
         }
 
