@@ -40,7 +40,7 @@ public class UiManager : MonoBehaviour
 
     public void ToggleControlsButtons()
     {
-        bool state = PlayerPrefs.GetInt("buttons", 0) == 1;
+        bool state = PlayerPrefs.GetInt("buttons", 1) == 1;
         foreach (var button in controlsButtons)
         {
             button.SetActive(state);

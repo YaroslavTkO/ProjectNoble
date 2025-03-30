@@ -11,6 +11,6 @@ public class Tips : MonoBehaviour
 
     public void SetTip()
     {
-        tip.text = "Pro tip: " + tips[Random.Range(0, tips.Count)];
+        tip.text = "Tip: " + tips[Random.Range(0, tips.Count)];
     }
 }

@@ -34,6 +34,11 @@ public class PlayerJump : MonoBehaviour
     {
         Move();
         WrapAroundScreen();
+        if (Input.touchCount == 0 && !Input.GetMouseButton(0))
+        {
+            leftbuttonInput = false;
+            rightbuttonInput = false;
+        }
     }
 
     void Move()

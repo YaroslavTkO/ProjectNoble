@@ -20,7 +20,7 @@ public class Settings : MonoBehaviour
         UpdateVolume();
         volumeSlider.onValueChanged.AddListener(OnSliderValueChanged);
 
-        buttonsToggle.isOn = PlayerPrefs.GetInt("buttons", 0) == 1 ? true : false;
+        buttonsToggle.isOn = PlayerPrefs.GetInt("buttons", 1) == 1 ? true : false;
         buttonsToggle.onValueChanged.AddListener(OnToggleValueChanged);
 
         settingsMenu.SetActive(false);
