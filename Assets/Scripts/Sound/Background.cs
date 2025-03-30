@@ -9,6 +9,10 @@ public class Background : MonoBehaviour
     private AudioSource musicAudioSource;
     public static Background _instance;
 
+    public AudioSource jumpSound;
+    public AudioSource buttonSound;
+    public AudioSource collisionSound;
+
     public float globalVolume;
 
 
@@ -35,10 +39,24 @@ public class Background : MonoBehaviour
         Debug.Log(newVolume);
         globalVolume = newVolume;
         musicAudioSource.volume = globalVolume * musicVolume;
+        jumpSound.volume = globalVolume;
+        buttonSound.volume = globalVolume;
+        collisionSound.volume = globalVolume;
+
 
     }
 
-
+    public void JumpSound()
+    {
+        jumpSound.Play();
+    }
+    public void ButtonSound() {
+        buttonSound.Play();
+    }
+    public void CollisionSound()
+    {
+        collisionSound.Play();
+    }
 
 
     void Start()

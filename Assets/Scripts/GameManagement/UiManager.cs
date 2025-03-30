@@ -38,6 +38,11 @@ public class UiManager : MonoBehaviour
          
     }
 
+    public void ButtonSound()
+    {
+        Background._instance.ButtonSound();
+    }
+
     public void ToggleControlsButtons()
     {
         bool state = PlayerPrefs.GetInt("buttons", 1) == 1;

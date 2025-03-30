@@ -13,7 +13,10 @@ public class Menu : MonoBehaviour
         highScoreText.text = "High score: " + PlayerPrefs.GetInt("HighScore", 0);
     }
 
-
+    public void ButtonSound()
+    {
+        Background._instance.ButtonSound();
+    }
 
     public void LoadScene(int id)
     {

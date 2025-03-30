@@ -11,7 +11,9 @@ public class DeathBound : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            Background._instance.CollisionSound();
             GameManager.Instance.GameOver();
+
         }
     }
 }

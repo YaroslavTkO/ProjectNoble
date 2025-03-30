@@ -16,12 +16,17 @@ public class Settings : MonoBehaviour
 
     void Start()
     {
-        volumeSlider.value = PlayerPrefs.GetFloat("Volume", 0.5f);
-        UpdateVolume();
-        volumeSlider.onValueChanged.AddListener(OnSliderValueChanged);
+        
 
-        buttonsToggle.isOn = PlayerPrefs.GetInt("buttons", 1) == 1 ? true : false;
+
+       
+        volumeSlider.onValueChanged.AddListener(OnSliderValueChanged);
+        volumeSlider.value = PlayerPrefs.GetFloat("Volume", 0.5f);
+
+
         buttonsToggle.onValueChanged.AddListener(OnToggleValueChanged);
+        buttonsToggle.isOn = PlayerPrefs.GetInt("buttons", 1) == 1 ? true : false;
+        Background._instance.buttonSound.Stop();
 
         settingsMenu.SetActive(false);
 
@@ -41,6 +46,11 @@ public class Settings : MonoBehaviour
             uiManager.ToggleControlsButtons();
         }
 
+    }
+
+    public void ButtonSound()
+    {
+        Background._instance.ButtonSound();
     }
 
     private void UpdateVolume()

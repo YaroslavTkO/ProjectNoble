@@ -19,6 +19,8 @@ public class PlayerJump : MonoBehaviour
     private bool rightbuttonInput = false;
     private SpriteRenderer charSpriteRend;
 
+    public AudioSource jumpAudio;
+
     private GameManager gameManager;
 
     void Start()
@@ -65,6 +67,7 @@ public class PlayerJump : MonoBehaviour
     void Jump()
     {
         rb.velocity = Vector2.up * jumpForce;
+        Background._instance.JumpSound();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

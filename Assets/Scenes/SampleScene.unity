@@ -218,6 +218,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 520214955}
+        m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
+        m_MethodName: ButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &117709671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -515,15 +527,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3687309160026090209, guid: 82867f45bc6872243938a2e55fc1e2ba, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3687309160616668337, guid: 82867f45bc6872243938a2e55fc1e2ba, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3687309160865956696, guid: 82867f45bc6872243938a2e55fc1e2ba, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82867f45bc6872243938a2e55fc1e2ba, type: 3}
@@ -1879,6 +1891,7 @@ MonoBehaviour:
   moveSpeed: 5
   charSprite: {fileID: 1085340757}
   cameraMovement: {fileID: 519420033}
+  jumpAudio: {fileID: 0}
 --- !u!4 &836373568
 Transform:
   m_ObjectHideFlags: 0
@@ -2044,7 +2057,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1095439223
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2298,6 +2311,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 520214955}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
+        m_MethodName: ButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 520214955}
+        m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: TogglePauseMenuState
         m_Mode: 6
         m_Arguments:
@@ -2429,6 +2454,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 520214955}
+        m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
+        m_MethodName: ButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 520214955}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: LoadScene
@@ -2776,6 +2813,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 520214955}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
+        m_MethodName: ButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 520214955}
+        m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 3
         m_Arguments:
@@ -3043,6 +3092,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 520214955}
+        m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
+        m_MethodName: ButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 520214955}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
         m_MethodName: LoadScene
