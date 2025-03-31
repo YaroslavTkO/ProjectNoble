@@ -7,6 +7,7 @@ public class PlayerJump : MonoBehaviour
     public float jumpForce = 3f;
     public float moveSpeed = 2f;
     public GameObject charSprite;
+    public ParticleSystem jumpParticles;
 
     public CameraMovement cameraMovement;
 
@@ -68,6 +69,7 @@ public class PlayerJump : MonoBehaviour
     {
         rb.velocity = Vector2.up * jumpForce;
         Background._instance.JumpSound();
+        jumpParticles.Play();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
